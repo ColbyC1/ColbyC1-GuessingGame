@@ -6,6 +6,7 @@
  * the advantages of separating code in this way will become immediately apparent. You will see this in the
  * coming mini-projects.
  */
+
 public class GameService {
     /**
      * This variable represents a secret number. This variable can be referenced anywhere within this GameService class.
@@ -26,7 +27,13 @@ public class GameService {
      * @param guessNumber the number that the user has input into their console.
      * @return true if guessNumber is equal to the secretNumber, false otherwise.
      */
+    
     public boolean checkGuess(double guessNumber) {
+        
+        if(secretNumber == guessNumber) {
+            return true;
+        }
+
         return false;
     }
 }

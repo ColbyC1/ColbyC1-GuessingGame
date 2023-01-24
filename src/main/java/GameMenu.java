@@ -11,22 +11,32 @@ import java.util.Scanner;
  * see how your code works from the user's end. You can run this method and interact with the app through your
  * IDE's terminal.
  */
+
 public class GameMenu {
     public static void main(String[] args) {
-        Scanner userInputScanner = new Scanner(System.in);
+        
+        Scanner scan = new Scanner(System.in);
         GameService gameService = new GameService();
         boolean playing = true;
-        System.out.println("It's time to start guessing the secret number, which is the first three digits of pi!");
+
+        System.out.println("It's time to start guessing the secret number," + 
+                        " which is the first three digits of pi!"
+        );
+
         while(playing){
+
             System.out.println("Guess: ");
-            double guessNumber = userInputScanner.nextDouble();
+            double guessNumber = scan.nextDouble();
             boolean correct = gameService.checkGuess(guessNumber);
+            
             if(correct){
                 System.out.println("You got the secret number! Thanks for playing");
                 playing = false;
-            }else{
+                
+            } else{
                 System.out.println("Incorrect!");
             }
+
         }
     }
 }
